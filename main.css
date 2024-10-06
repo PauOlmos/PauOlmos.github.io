@@ -1,0 +1,39 @@
+html{
+    font-size: 22px;
+}
+
+body{
+    background-image: url(img/background.jpg);
+    background-size: cover;
+    background-attachment:fixed;;
+    color:whitesmoke;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.container{
+    background-color: rgba(255, 255, 255, 0.493);
+    width: 1200px;
+    height: 100px;
+    align-items:center;
+}
+
+
+
+a {
+    color: aliceblue;
+}
+a:visited{
+    color: lightgray;
+}
+a:hover, a:active {
+    color:#eee;
+}
+figcaption{
+    font-size: 11px;
+}
+
+img{
+    margin-left: auto;
+    margin-right: auto;
+}
