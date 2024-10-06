@@ -10,22 +10,23 @@
         <link rel="stylesheet" href="main.css" type="text/css">
     </head>
     <body>
-        <br><br><br><br>
+        
+        <section id="home"><br><br><br><br>
         <figure style="display: flex; justify-content: center; align-items: center; flex-direction: column; align-content: center;">
             <img src="img/entitytutorial.png" alt="Entity Tutorial" title="firstBoss" width="300" height="300" style="align-items: center;">
             <figcaption style="margin-top: 20px;">PEAK BOSS STUDIOS</figcaption>
         </figure>
-
+        </section>
         <br><br><br><br><br>
 
-        <section id="whoweare">
+        <section id="who-we-are">
             <h2 style="display: flex; text-align: left; justify-content: left; overflow: auto;"> WHO WE ARE</h2>
             <div class="video">
             <video src="vids/endd.mp4" autoplay loop muted type="video/mp4" style="float: right; overflow: auto; margin-right: 20px;width: 420px; height: 320px;" ></video></div>
             <p style="margin-right: 50%; overflow:auto; margin-top: 10%;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi culpa veritatis ab, sit tempora eius aliquid veniam quibusdam similique asperiores necessitatibus enim odio. Ipsum, blanditiis iure ducimus distinctio ipsam iusto.</p>
         </section>
         <br><br><br><br><br><br>
-        <section id="ourplans">
+        <section id="our-plans">
             <h2 style="text-align: center; overflow: auto;">OUR PLANS</h2>
             <br><br>
             <div class="image-row">
@@ -35,21 +36,72 @@
                 <figure style="width:24%"><img src="icons/learn.png" alt="learn"style="width: 150px;"><figcaption style="text-align: center; font-size: 22px;">Learn</figcaption><div class="hover-text">Hover Text for Image 4</div></figure>
             </div>
         </section>
-        <br><br><br><br>
-        <section id="gamepilars">
-            
-            <h2 style="text-align: center;">GAME PILARS</h2>
+        
+        <section id="game-pillars">
+            <br><br><br><br>
+            <h2 style="text-align: center;">GAME PILLARS</h2>
             <br><br><br><br><br><br><br>
             <div style="display: flex; justify-content: center; align-items: center; height: 100px; flex-direction: row; margin-top: 30px;">
-                <button style="margin-right: 200px; padding: 10px 10px; font-size: 16px;">&lt;</button>
+                <button id="leftButton" style="margin-right: 200px; padding: 10px 10px; font-size: 16px;">&lt;</button>
+                
                 <div style="flex-direction: column; display: flex; align-items: center;">
-                    <h3 style="text-align: center;margin-bottom: auto; margin-top: 100px;">Bosses</h3>
-                    <figure><video src="vids/endd.mp4" autoplay loop muted type="video/mp4" style="width: 630px; height: 480px;"></video>
-                    <figcaption style="font-size: 18px; margin-bottom: 40px;">This is where the pilar description goes</figcaption></figure>
+                    <h3 id="title" style="text-align: center;margin-bottom: auto; margin-top: 100px;">Bosses</h3>
+                    <figure>
+                        <video id="video" src="vids/endd.mp4" autoplay loop muted type="video/mp4" style="width: 630px; height: 480px;"></video>
+                        <figcaption id="description" style="font-size: 18px; margin-bottom: 100px;">This is where the pilar description goes</figcaption>
+                    </figure>
                 </div>
                 
-                <button style="margin-left: 200px; padding: 10px 10px; font-size: 16px;">&gt;</button>
+                <button id="rightButton" style="margin-left: 200px; padding: 10px 10px; font-size: 16px;">&gt;</button>
             </div>
+            
+            <script>
+                // Sample data for different content
+                const content = [
+                    {
+                        title: 'Bosses',
+                        videoSrc: 'vids/endd.mp4',
+                        description: 'Description for pilar 1'
+                    },
+                    {
+                        title: 'Fun',
+                        videoSrc: 'vids/endd.mp4',
+                        description: 'Description for pilar 2'
+                    },
+                    {
+                        title: 'Autenticity',
+                        videoSrc: 'vids/endd.mp4',
+                        description: 'Description for pilar 3'
+                    },
+                    {
+                        title: 'Originality',
+                        videoSrc: 'vids/endd.mp4',
+                        description: 'Description for pilar 4'
+                    }
+                ];
+            
+                let currentIndex = 0;
+            
+                // Update the content based on the current index
+                function updateContent(index) {
+                    document.getElementById('title').textContent = content[index].title;
+                    document.getElementById('video').src = content[index].videoSrc;
+                    document.getElementById('description').textContent = content[index].description;
+                }
+            
+                // Right button click event
+                document.getElementById('rightButton').addEventListener('click', function() {
+                    currentIndex = (currentIndex + 1) % content.length; // Loop to the next content
+                    updateContent(currentIndex);
+                });
+            
+                // Left button click event (optional: to navigate backward)
+                document.getElementById('leftButton').addEventListener('click', function() {
+                    currentIndex = (currentIndex - 1 + content.length) % content.length; // Loop to the previous content
+                    updateContent(currentIndex);
+                });
+            </script>
+            
             
             <br><br><br><br><br><br>
         </section>
@@ -94,6 +146,15 @@
         </p>
         </section>-->
         
-    
+        <br><br><br><br><br><hr>
+        <nav style="text-align: center; margin-bottom: 20px; font-size: 18px;">
+            <a href="#home" style="margin-right: 15px;">Home</a>
+            <a href="#who-we-are" style="margin-right: 15px;">Who we are</a>
+            <a href="#our-plans" style="margin-right: 15px;">Our plans</a>
+            <a href="#game-pillars">Game pillars</a>
+        </nav>
+        <p style="text-align: center; font-style: italic; font-size: 14px;">&lt&lt&lt <a href="https://github.com/PauOlmos" target="_blank">Pau Olmos Serrano</a> &gt&gt&gt</p>
+
     </body>      
+    
 </html>
