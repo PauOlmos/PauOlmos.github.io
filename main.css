@@ -70,3 +70,26 @@ figure {
 button{
     background-color: #eeeeee63;
 }
+
+.fixed-nav {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #cccccc41;
+    border-radius: 2px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.fixed-nav a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.fixed-nav a:hover {
+    color: #6e6b6b; /* Change color on hover */
+}
