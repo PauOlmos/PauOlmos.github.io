@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Pau Olmos">
+        <meta name="description" content="Learning HTML and developing Portfolio"> 
+        <title>PEAK BOSS STUDIOS</title>
+        <link rel="icon" href="favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="main.css" type="text/css">
+    </head>
+    <body>
+        <div class="fixed-nav">
+            <a href="index.html" style="font-size: 16px;">Home</a>
+            <a href="team-members.html" style="font-size: 16px;">Team Members</a>
+            <a href="projects.html" style="font-size: 16px;">Projects</a>
+            <a href="dev-news.html" style="font-size: 16px;">PBS News</a>
+            <a href="social-media.html" style="font-size: 16px;">Social Media</a>
+            <a href="contact.html" style="font-size: 16px;">Contact</a>
+        </div>
+        <h1 style="text-align: center; margin-bottom: 10px; margin-top: 60px;">SOCIAL MEDIA</h1>
+        <hr>
+            <br><br>
+            <div class="image-row" id="image-row" style="display: flex; justify-content: space-around; align-items: center; margin-top: 100px;"></div>
+
+<style>
+    /* CSS to make the image slightly transparent on hover */
+    .image-row img {
+        transition: opacity 0.3s ease; /* Smooth transition for opacity */
+    }
+
+    .image-row img:hover {
+        opacity: 0.7; /* Set image transparency on hover */
+    }
+
+    /* Optional: Make sure the anchor tags don't have default styling */
+    .image-row a {
+        text-decoration: none; /* Remove underline from links */
+    }
+</style>
+
+<script>
+    // Sample data for different content
+    const content = [
+        {
+            src: 'icons/x-icon.png',
+            url: 'https://www.instagram.com/pauolmosss'
+        },
+        {
+            src: 'icons/ig-icon.png',
+            url: 'https://www.instagram.com/pauolmosss'
+        },
+        {
+            src: 'icons/tik-tok-icon.png',
+            url: 'https://www.instagram.com/pauolmosss'
+        },
+        {
+            src: 'icons/youtube-icon.png',
+            url: 'https://www.instagram.com/pauolmosss'
+        }
+    ];
+
+    // Function to dynamically create and append elements to the image row
+    function renderContent() {
+        const imageRow = document.getElementById('image-row');
+        imageRow.innerHTML = ''; // Clear existing content
+
+        content.forEach(item => {
+            // Create a new figure element
+            const figure = document.createElement('figure');
+            figure.style.width = '24%';
+            figure.style.textAlign = 'center';  // Center the images in the figure
+            figure.style.display = 'flex';
+            figure.style.flexDirection = 'column';
+            figure.style.alignItems = 'center';
+
+            // Create anchor element
+            const link = document.createElement('a');
+            link.href = item.url; // Set the URL to open on click
+            link.target = '_blank'; // Opens the link in a new tab (optional)
+
+            // Create img element
+            const img = document.createElement('img');
+            img.src = item.src;
+            img.style.width = '120px';
+
+            // Append the img to the anchor (link)
+            link.appendChild(img);
+
+            // Append the link to the figure
+            figure.appendChild(link);
+
+            // Append the figure to the image row
+            imageRow.appendChild(figure);
+        });
+    }
+
+    // Call the function to render the content initially
+    renderContent();
+</script>
+<hr style="margin-top: 200px;">
+<p style="text-align: center; font-style: italic; font-size: 14px;">&lt&lt&lt <a href="pauolmoscv.pdf" target="_blank" download="">Pau Olmos Serrano</a> &gt&gt&gt</p>
+
+    </body>      
+</html>
