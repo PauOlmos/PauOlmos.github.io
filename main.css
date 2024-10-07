@@ -27,6 +27,12 @@ body{
     height: auto; /* Keeps the aspect ratio */
 }
 
+.contact-info {
+    display: flex;
+    gap: 20px; /* Space between items */
+    text-align: center;
+}
+
 .hover-text {
     position: absolute;
     top: 0;

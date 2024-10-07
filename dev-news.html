@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Pau Olmos">
+    <meta name="description" content="Learning HTML and developing Portfolio"> 
+    <title>PEAK BOSS STUDIOS</title>
+    <link rel="icon" href="icons/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <style>
+        /* Basic styles for containers */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin: 10px auto;
+            width: 80%;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            min-height: 10px;
+            transition: height 0.5s ease, padding 0.5s ease;
+        }
+        .container.expanded {
+            flex-direction: column; /* Change to column for the additional content */
+            height: auto;
+            padding: 20px;
+        }
+        .text {
+            font-size: 14px;
+            flex: 1;
+            margin-left: 20px;
+            margin-right: 20px;
+            transition: opacity 0.3s ease;
+            color: black; /* Set font color to black */
+        }
+        /* Hide the text when the container is expanded */
+        .container.expanded .text {
+            opacity: 0;
+        }
+        .additional-content {
+            display: none;
+            flex-direction: row; /* Display as a row when expanded */
+            align-items: center;
+            width: 100%; /* Make sure it takes the full width */
+        }
+        .additional-content img {
+            width: 120px;  /* Increased width */
+            height: 120px; /* Increased height */
+            margin-right: 15px;
+        }
+        .additional-text {
+            flex: 1;
+            font-size: 14px;
+            color: black; /* Set font color to black */
+        }
+        .button-right, .button-close {
+            padding: 8px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-right:hover, .button-close:hover {
+            background-color: #0056b3;
+        }
+        .button-close {
+            background-color: red;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="fixed-nav">
+        <a href="index.html" style="font-size: 16px;">Home</a>
+        <a href="team-members.html" style="font-size: 16px;">Team Members</a>
+        <a href="projects.html" style="font-size: 16px;">Projects</a>
+        <a href="dev-news.html" style="font-size: 16px;">PBS News</a>
+        <a href="social-media.html" style="font-size: 16px;">Social Media</a>
+        <a href="social-media.html#contact-us" style="font-size: 16px;">Contact</a>
+    </div>
+
+    <h1 style="text-align: center; margin-bottom: 10px; margin-top: 60px;">DEV NEWS</h1>
+    <hr>
+    <br><br>
+
+    <!-- Placeholder for dynamic content -->
+     
+    <h2>Latest New</h2>
+    <div id="first-news-container"></div>
+    <br><br><br>
+    
+    <hr style="margin-top: 20px;">
+    <p style="text-align: center; font-style: italic; font-size: 14px;">&lt&lt&lt <a href="pauolmoscv.pdf" target="_blank" download="">Pau Olmos Serrano</a> &gt&gt&gt</p>
+
+    <script>
+        // Array with dynamic content for the containers
+        const newsItems = [
+            { text: "First news item description.", button: "+", additionalText: "Detailed info for the first news item.", imgSrc: "https://via.placeholder.com/120", id:"0"},
+            { text: "Second news item description.", button: "+", additionalText: "Detailed info for the second news item.", imgSrc: "https://via.placeholder.com/120", id:"1"},
+            { text: "Third news item description.", button: "+", additionalText: "Detailed info for the third news item.", imgSrc: "https://via.placeholder.com/120", id:"2"},
+            { text: "Fourth news item description.", button: "+", additionalText: "Detailed info for the fourth news item.", imgSrc: "https://via.placeholder.com/120", id:"3"},
+        ];
+    
+        // Function to create containers dynamically
+        const newsContainer = document.getElementById('first-news-container');
+    
+        // Function to create a single container
+        function createNewsItem(item) {
+            // Create container div
+            const containerDiv = document.createElement('div');
+            containerDiv.className = 'container';
+            if (item.id == "0") {
+    containerDiv.style.marginBottom = '100px'; // Add margin for the first item
+}
+            // Create text element
+            const textP = document.createElement('p');
+            textP.className = 'text';
+            textP.textContent = item.text;
+    
+            // Create button element
+            const button = document.createElement('button');
+            button.className = 'button-right';
+            button.textContent = item.button;
+    
+            // Create additional content container
+            const additionalContentDiv = document.createElement('div');
+            additionalContentDiv.className = 'additional-content';
+    
+            // Image for additional content
+            const img = document.createElement('img');
+            img.src = item.imgSrc;
+            img.alt = "Additional content image";
+    
+            // Additional text
+            const additionalTextP = document.createElement('p');
+            additionalTextP.className = 'additional-text';
+            additionalTextP.textContent = item.additionalText;
+    
+            // Create close button for expanded content
+            const closeButton = document.createElement('button');
+            closeButton.className = 'button-close';
+            closeButton.textContent = "Close";
+    
+            // Append image and additional text to additional content div
+            additionalContentDiv.appendChild(img);
+            additionalContentDiv.appendChild(additionalTextP);
+            additionalContentDiv.appendChild(closeButton);
+    
+            // Append text and button to container
+            containerDiv.appendChild(textP);
+            containerDiv.appendChild(button);
+            containerDiv.appendChild(additionalContentDiv);
+    
+            // Append container to the news container div
+            newsContainer.appendChild(containerDiv);
+    
+            // Toggle functionality for expanding the container and showing additional content
+            button.addEventListener('click', function() {
+                containerDiv.classList.add('expanded');
+                additionalContentDiv.style.display = 'flex';
+                button.style.display = 'none'; // Hide the original button
+            });
+            
+            // Close button functionality to collapse the container
+            closeButton.addEventListener('click', function() {
+                containerDiv.classList.remove('expanded');
+                additionalContentDiv.style.display = 'none';
+                button.style.display = 'inline-block'; // Show the original button again
+            });
+            
+            if(item.id == 0){
+                containerDiv.classList.add('expanded');
+                additionalContentDiv.style.display = 'flex';
+                button.style.display = 'none'; // Hide the original button
+            }
+        }
+        
+        // Create the first news item
+        createNewsItem(newsItems[0]);
+    
+        // Create and insert the paragraph between the first and second items
+        const paragraph = document.createElement('p');
+        paragraph.textContent = "Other news";
+        paragraph.style.textAlign = "left"; // Optional: center the paragraph
+        newsContainer.appendChild(paragraph);
+    
+        // Create the rest of the news items
+        newsItems.slice(1).forEach((item) => {
+            createNewsItem(item);
+        });
+    </script>
+    
+</body>      
+</html>
