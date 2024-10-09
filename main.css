@@ -3,12 +3,18 @@ html{
 }
 
 body{
-    background-image: url(img/background.jpg);
-    background-size: cover;
-    background-attachment:fixed;;
     color:whitesmoke;
     margin-left: 20%;
     margin-right: 20%;
+}
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire background */
+    z-index: -1; /* Puts the video behind the content */
 }
 
 .container{

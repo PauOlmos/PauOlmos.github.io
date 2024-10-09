@@ -10,6 +10,12 @@
         <link rel="stylesheet" href="main.css" type="text/css">
     </head>
     <body>
+
+        <video autoplay muted loop id="bg-video">
+            <source src="vids/background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
         <div class="fixed-nav">
             <a href="index.html" style="font-size: 16px;">Home</a>
             <a href="team-members.html"style="font-size: 16px;">Team Members</a>
@@ -32,7 +38,7 @@
         <section id="who-we-are">
             <h2 style="display: flex; text-align: left; justify-content: left; overflow: auto;"> WHO WE ARE</h2>
             <div class="video">
-            <video src="vids/endd.mp4" autoplay loop muted type="video/mp4" style="float: right; overflow: auto; margin-right: 20px;width: 420px; height: 320px;" ></video></div>
+            <video src="vids/who-we-are.mp4" autoplay loop muted type="video/mp4" style="float: right; overflow: auto; margin-right: 20px;width: 420px; height: 320px;" ></video></div>
             <p style="margin-right: 50%; overflow:auto; margin-top: 10%;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi culpa veritatis ab, sit tempora eius aliquid veniam quibusdam similique asperiores necessitatibus enim odio. Ipsum, blanditiis iure ducimus distinctio ipsam iusto.</p>
         </section>
         <br><br><br><br><br><br>
@@ -57,7 +63,7 @@
                 <div style="flex-direction: column; display: flex; align-items: center;">
                     <h3 id="title" style="text-align: center;margin-bottom: auto; margin-top: 200px;">Bosses</h3>
                     <figure>
-                        <video id="video" src="vids/endd.mp4" autoplay loop muted type="video/mp4" style="width: 630px; height: 480px;"></video>
+                        <video id="video" src="vids/best-bosses.mp4" autoplay loop muted type="video/mp4" style="width: 630px; height: 480px;"></video>
                         <figcaption id="description" style="font-size: 18px; margin-bottom: 100px;">This is where the pilar description goes</figcaption>
                     </figure>
                 </div>
@@ -70,22 +76,17 @@
                 const content = [
                     {
                         title: 'Bosses',
-                        videoSrc: 'vids/endd.mp4',
+                        videoSrc: 'vids/best-bosses.mp4',
                         description: 'Description for pilar 1'
                     },
                     {
-                        title: 'Fun',
-                        videoSrc: 'vids/endd.mp4',
-                        description: 'Description for pilar 2'
-                    },
-                    {
                         title: 'Autenticity',
-                        videoSrc: 'vids/endd.mp4',
+                        videoSrc: 'vids/autenticity.mp4',
                         description: 'Description for pilar 3'
                     },
                     {
                         title: 'Originality',
-                        videoSrc: 'vids/endd.mp4',
+                        videoSrc: 'vids/originality.mp4',
                         description: 'Description for pilar 4'
                     }
                 ];
@@ -115,46 +116,6 @@
             
             <br><br><br><br><br><br>
         </section>
-    <!--<section id="TeamMembers">
-            <h2>TEAM MEMBERS</h2>
-            <ol>
-                    <li><p>
-                    Pau Olmos&nbsp;<a href="about.html">here</a></p>
-                    </li>
-                    <li><p>
-                        Pol Salle&nbsp;<a href="https://github.com/PauOlmos" target="_blank">here</a>
-                    </p></li>
-                    <li><p>Aihnoa Pardo</p></li>
-            </ol>
-        <hr>
-        <figure>
-            <aside>
-                <details>
-                    <summary>Full <mark>Project</mark>  list</summary>
-                    <ul>
-                        <li><p>
-                        ENTITY</p>
-                        </li>
-                        <li><p>
-                            The Bet</p>
-                            </li>
-                        <li><p>
-                            Gcards
-                        </p></li>
-                        <li><p>Rats</p></li>
-                </ul>
-                </details>
-            </aside>
-            <img src="img/entitywell.png" alt="Enity Tutorial" title="firstEnvironment" width="300" height="180" loading="lazy">  
-                <figcaption>
-                    Trolaso
-                </figcaption>
-            </figure>
-        <hr>
-        <p>
-            Download <a href="pauolmoscv.pdf" download><strong>CV</strong></a>
-        </p>
-        </section>-->
         
         <br><br><br><br><br><br><br><hr>
         <nav style="text-align: center; margin-bottom: 20px; font-size: 18px;">

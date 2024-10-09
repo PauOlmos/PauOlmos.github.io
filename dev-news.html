@@ -73,6 +73,10 @@
     
 </head>
 <body>
+    <video autoplay muted loop id="bg-video">
+        <source src="vids/background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     <div class="fixed-nav">
         <a href="index.html" style="font-size: 16px;">Home</a>
         <a href="team-members.html" style="font-size: 16px;">Team Members</a>
@@ -98,10 +102,8 @@
     <script>
         // Array with dynamic content for the containers
         const newsItems = [
-            { text: "First news item description.", button: "+", additionalText: "Detailed info for the first news item.", imgSrc: "https://via.placeholder.com/120", id:"0"},
-            { text: "Second news item description.", button: "+", additionalText: "Detailed info for the second news item.", imgSrc: "https://via.placeholder.com/120", id:"1"},
-            { text: "Third news item description.", button: "+", additionalText: "Detailed info for the third news item.", imgSrc: "https://via.placeholder.com/120", id:"2"},
-            { text: "Fourth news item description.", button: "+", additionalText: "Detailed info for the fourth news item.", imgSrc: "https://via.placeholder.com/120", id:"3"},
+            { text: "Project Almost has begun!", button: "+", additionalText: "The project consisting in developing a videogame while uploading multimedia has started its long journey. Stay tunned!", imgSrc: "icons/brand.png", id:"0"},
+            { text: "Peak Boss Studio's website is almost over.", button: "+", additionalText: "Although the web will get updates and new designs, the first iteration has almost been finished. Leaving behind only completing the videos, text and icons. It has been great to learn html and css.", imgSrc: "icons/learn.png", id:"1"},
         ];
     
         // Function to create containers dynamically
